@@ -43,7 +43,7 @@ int main(int argc, char const *argv[])
 				{
 					if(l<=k/2)
 					{
-						if(v[j+l] - (l+1) <0)
+						if((v[j+l] - (l+1)) <0)
 							{
 								break;
 								flag = 1;
@@ -55,16 +55,16 @@ int main(int argc, char const *argv[])
 					}
 					else
 					{
-						if(v[j+l] - (j+l-2*(j+l-k/2)+1) < 0)
+						if((v[j+l] - (j+l-2*(j+l-k/2)+1)) < 0)
 							{
 								break;
 								flag = 1;
 							}
-						temp_cost += v[j+l] - (j+l-2*(j+l-k/2)+1);
+						temp_cost += (v[j+l] - (j+l-2*(j+l-k/2)+1));
 					}
 				}
 				if(j+k < n && flag == 0)
-					temp_cost+=sum[n-1] - sum[j+k];
+					temp_cost+=(sum[n-1] - sum[j+k]);
 				if(j!=0 && flag == 0)
 					temp_cost+=sum[j-1];
 
