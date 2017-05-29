@@ -83,14 +83,25 @@ int main(int argc, char const *argv[])
 	a[9] = 40;
 	a[10] = 48;
 
-std::vector<int>::iterator it;
+//std::vector<int>::iterator it;
 
 
+cout<<"size of v = "<<v.size()<<endl;
+cout<<"list : "<<v[a[0]]<<endl;
+cout<<"list : "<<v[a[1]]<<endl;
+cout<<"list : "<<v[a[4]]<<endl;
+cout<<"list : "<<v[a[5]]<<endl;
+cout<<"list : "<<v[a[6]]<<endl;
+cout<<"list : "<<v[a[23]]<<endl;
+cout<<"list : "<<v[a[24]]<<endl;
+cout<<"list : "<<v[a[8]]<<endl;
+cout<<"list : "<<v[a[9]]<<endl;
+cout<<"list : "<<v[a[10]]<<endl;
 
 	for (int i = 0; i < t; ++i)
 	{
 		scanf("%d",&n);
-		int pos;
+		//int pos;
 		char arr[2][n];
 		cin>>str;
 		for (int j = 0; j < n; ++j)
@@ -143,6 +154,15 @@ std::vector<int>::iterator it;
 
 		}
 
+for (int k = 0; k < 2 ; ++k)
+{
+	for (int l = 0; l < n ; ++l)
+	{
+		printf("%c ",arr[k][l]);
+	}
+	printf("\n");
+
+}
 		int flag = 0;
 		int sum = 0;
 		int temp = -1;
@@ -168,6 +188,15 @@ std::vector<int>::iterator it;
 						}
 					else
 						sum = (int)arr[0][k] - 48 + (int)arr[1][k] - 48;
+						printf("k = %d : sum = %d\n",k,sum);
+					if(n==1)
+						legit_flag = 1;
+					if(n==2)
+					{
+						if(!(sum == 4 && arr[0][k]=='1' && arr[1][k+1]=='3') || (sum == 6 && arr[0][k+1]=='2' && arr[1][k]=='4'))
+							legit_flag = 1;
+						
+					}
 					if(temp != -1)
 					{
 						if(temp == 7)
@@ -194,6 +223,7 @@ std::vector<int>::iterator it;
 
 					}
 					temp = sum;
+
 
 
 
